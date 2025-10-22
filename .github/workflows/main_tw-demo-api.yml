@@ -35,6 +35,7 @@ jobs:
         run: |
           dotnet sonarscanner begin \
             /k:"yewmeng80_tw-demo-api" \
+            /o:"yewmeng80" \
             /d:sonar.login="${{ secrets.SONAR_TOKEN }}" 
 
       - name: Build with dotnet
