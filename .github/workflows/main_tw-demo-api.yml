@@ -22,9 +22,28 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
+      
+      - name: Install SonarScanner for .NET
+        shell: powershell
+        run: |
+          dotnet tool install --global dotnet-sonarscanner
+      
+      - name: Begin SonarQube Analysis
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed for PR decoration
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          dotnet sonarscanner begin \
+            /k:"yewmeng80_tw-demo-api" \
+            /d:sonar.login="${{ secrets.SONAR_TOKEN }}" 
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+      
+      - name: End SonarQube Analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
