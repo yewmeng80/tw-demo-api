@@ -10,7 +10,7 @@ namespace tw_demo_api_test.Services
     public class UserServiceTest
     {
         [Fact]
-        public void CreateUser_EmptyUsername_ReturnTrue()
+        internal void CreateUser_EmptyUsername_ReturnTrue()
         {
             var userService = new UserService();
             Assert.Throws<ArgumentNullException>(() => userService.CreateUser("", "name", "aa@hotmail.com"));
