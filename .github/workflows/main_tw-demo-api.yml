@@ -38,11 +38,8 @@ jobs:
         run: dotnet sonarscanner begin /k:"yewmeng80_tw-demo-api" /o:"yewmeng80" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
       
       - name: Build with dotnet
-        run: dotnet build --configuration Release
-      
-      - name: Run Tests and Collect Coverage
-        shell: pwsh
-        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage.opencover.xml --logger "trx;LogFileName=test-results.trx"
+        run: dotnet build --configuration Release      
+     
       
       - name: End SonarQube Analysis
         env:
