@@ -41,9 +41,9 @@ jobs:
         run: dotnet build --configuration Release      
 
       - name: Run Tests and Collect Coverage
-        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/coverage.opencover.xml"
-        
-           
+        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/coverage.opencover.xml 
+     
+      
       - name: End SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
