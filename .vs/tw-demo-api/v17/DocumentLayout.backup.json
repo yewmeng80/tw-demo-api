@@ -38,8 +38,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main_tw-demo-api.yml",
+              "DocumentMoniker": "C:\\Users\\yewmeng.c\\sourcecodes\\tw-demo-api\\.github\\workflows\\main_tw-demo-api.yml",
+              "RelativeDocumentMoniker": ".github\\workflows\\main_tw-demo-api.yml",
+              "ToolTip": "C:\\Users\\yewmeng.c\\sourcecodes\\tw-demo-api\\.github\\workflows\\main_tw-demo-api.yml",
+              "RelativeToolTip": ".github\\workflows\\main_tw-demo-api.yml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-10-27T00:03:07.881Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -67,19 +80,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-10-23T13:53:51.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "main_tw-demo-api.yml",
-              "DocumentMoniker": "C:\\Users\\yewmeng.c\\sourcecodes\\tw-demo-api\\.github\\workflows\\main_tw-demo-api.yml",
-              "RelativeDocumentMoniker": ".github\\workflows\\main_tw-demo-api.yml",
-              "ToolTip": "C:\\Users\\yewmeng.c\\sourcecodes\\tw-demo-api\\.github\\workflows\\main_tw-demo-api.yml",
-              "RelativeToolTip": ".github\\workflows\\main_tw-demo-api.yml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-10-06T22:45:54.858Z",
               "EditorCaption": ""
             },
             {
