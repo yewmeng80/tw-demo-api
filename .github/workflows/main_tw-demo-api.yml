@@ -44,8 +44,17 @@ jobs:
         run: dotnet build --configuration Release      
 
       - name: Run Tests and Collect Coverage
-        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/coverage.opencover.xml      
+        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/coverage.opencover.xml --results-directory TestResults   
                   
+      - name: Verify OpenCover XML Report
+        run: |
+                if [ -f "TestResults/coverage.opencover.xml" ]; then
+                    echo "OpenCover XML report found at TestResults/coverage.opencover.xml"
+                else
+                    echo "Error: OpenCover XML report not found!"
+                    exit 1
+                fi
+
       - name: End SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
