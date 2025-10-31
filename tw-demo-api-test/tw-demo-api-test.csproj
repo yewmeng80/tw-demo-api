@@ -5,7 +5,7 @@
     <RootNamespace>tw_demo_api_test</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
+	  <DebugType>Full</DebugType>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>

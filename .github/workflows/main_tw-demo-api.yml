@@ -30,6 +30,9 @@ jobs:
         shell: powershell
         run: |
           dotnet tool install --global dotnet-sonarscanner    
+
+      - name: Install Coverlet Global Tool
+        run: dotnet tool install --global coverlet.console
      
       - name: Begin SonarQube Analysis
         env:
