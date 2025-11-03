@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace tw_demo_api
 {
+    [ExcludeFromCodeCoverage]
     public class WeatherForecast
     {
         public DateOnly Date { get; set; }

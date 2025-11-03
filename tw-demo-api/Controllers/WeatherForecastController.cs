@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.CodeAnalysis;
 
 namespace tw_demo_api.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
