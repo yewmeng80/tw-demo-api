@@ -35,13 +35,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed for PR decoration
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: dotnet sonarscanner begin /k:"yewmeng80_tw-demo-api" /o:"yewmeng80" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**/program.cs;*Controller.cs;*.json;*.yml"
+        run: dotnet sonarscanner begin /k:"yewmeng80_tw-demo-api" /o:"yewmeng80" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
     
       - name: Build with dotnet
         run: dotnet build --configuration Release      
 
       - name: Run Tests and Collect Coverage
-        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/coverage.opencover.xml --results-directory TestResults   
+        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeFile="**/.program.cs%2c**/*Controller.cs%2c**/*json%2c**/*yml" /p:CoverletOutput=TestResults/coverage.opencover.xml --results-directory TestResults   
                   
       - name: End SonarQube Analysis
         env:
