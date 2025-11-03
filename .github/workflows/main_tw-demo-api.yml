@@ -41,7 +41,7 @@ jobs:
         run: dotnet build --configuration Release      
 
       - name: Run Tests and Collect Coverage
-        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeFile="**/.program.cs%2c**/*Controller.cs%2c**/*json%2c**/*yml%2c**/*test.cs" /p:CoverletOutput=TestResults/coverage.opencover.xml --results-directory TestResults   
+        run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeFile="**/Program.cs%2c**/*Controller.cs%2c**/*json%2c**/*yml%2c**/*test.cs" /p:CoverletOutput=TestResults/coverage.opencover.xml --results-directory TestResults   
                   
       - name: End SonarQube Analysis
         env:
