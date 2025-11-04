@@ -18,6 +18,10 @@ namespace tw_demo_api.Services
 
             if (string.IsNullOrEmpty(email))
             {
+                var a = new StringBuilder();
+                a = a.Append(username);
+                a = a.Append("@");
+                a = a.Append(name);
                 throw new ArgumentNullException("email is null or empty");
             }
 
