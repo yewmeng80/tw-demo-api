@@ -16,6 +16,11 @@ namespace tw_demo_api.Services
                 throw new ArgumentNullException("username is null or empty");
             }
 
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentNullException("email is null or empty");
+            }
+
             using (var md5 = MD5.Create())
             {
                 var result = md5.ComputeHash(Encoding.ASCII.GetBytes(username));
