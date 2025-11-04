@@ -32,6 +32,7 @@ jobs:
           dotnet tool install --global dotnet-sonarscanner    
      
       - name: Begin SonarQube Analysis
+        shell: cmd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed for PR decoration
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -44,6 +45,7 @@ jobs:
         run: dotnet test tw-demo-api-test/tw-demo-api-test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=TestResults/coverage.opencover.xml --results-directory TestResults   
                   
       - name: End SonarQube Analysis
+        shell: cmd
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
